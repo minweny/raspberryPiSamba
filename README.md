@@ -53,12 +53,13 @@ mkdir /share
 sudo nano /etc/samba/smb.conf
 
 # add the following to the bottom. A little different from the tutorial
+3 space
 [share]
-path = /share
-writeable=Yes
-create mask=0777
-directory mask=0777
-public=no
+   path = /share
+   writeable=Yes
+   create mask=0777
+   directory mask=0777
+   public=no
 
 sudo smbpasswd -a pi
 sudo systemctl restart smbd

@@ -14,6 +14,7 @@ raspberry
 6. Change pi configuration  
 sudo raspi-config 
 > change password, hostname, auto login to pi desktop, resolution, open vnc  
+
 Error: pi cannot currently show the desktop 
 > You forgot to set: auto login to pi desktop, change resolution  
 7. vnc to pi hostname 
@@ -39,6 +40,8 @@ Password: ChangeMe
 # change configuration
 SSID: ChiTown2
 Password: 
+IP address: 192.168.4.1
+DHCP range: 192.168.4.50 to 192.168.4.250
 
 ```
 9. install samba[https://pimylifeup.com/raspberry-pi-samba/]  
@@ -46,12 +49,12 @@ Password:
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install samba samba-common-bin
-mkdir /home/pi/share
+mkdir /share
 sudo nano /etc/samba/smb.conf
 
 # add the following to the bottom. A little different from the tutorial
 [share]
-path = /home/pi/share
+path = /share
 writeable=Yes
 create mask=0777
 directory mask=0777

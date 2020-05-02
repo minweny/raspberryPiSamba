@@ -49,13 +49,13 @@ DHCP range: 192.168.4.50 to 192.168.4.250
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install samba samba-common-bin
-mkdir /share
+mkdir /home/pi/shared
 sudo nano /etc/samba/smb.conf
 
 # add the following to the bottom. A little different from the tutorial
 3 space
-[share]
-   path = /share
+[shared]
+   path = /home/pi/shared
    writeable=Yes
    create mask=0777
    directory mask=0777
